@@ -1,38 +1,210 @@
+.font {
+  font-family: 'Cinzel Decorative', serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  background: rgb(255, 255, 255);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
+  gap: 2em;
+  margin: 0;
+  justify-content: top; 
+  
   align-items: center;
+}
+.cover{
+   background: black;
+   opacity: 0.7;
+   width: 100%;
+   height: 100%;
+   
+   position: absolute;
+}
+
+.contain {
+ z-index: 2;
+  height: 50%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2em; 
+  width: 80%;
 }
 
-.App-link {
-  color: #61dafb;
+.quote {
+  display: flex;
+  font-size: 300%;
+  font-weight: 400;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  z-index: 2;
+  margin-top: 0.4em;
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #cfc547;
+
+text-shadow: 3px 0px 7px rgba(81,67,21,0.8), 
+	  -3px 0px 7px rgba(81,67,21,0.8), 
+	  0px 4px 7px rgba(81,67,21,0.8);
+}
+.App {
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease, opacity 0.5s ease;
+}
+
+.quote,
+.by {
+  transition: opacity 0.5s ease;
+}
+
+.by {
+  font-size: 300%;
+  color: #ffef12;;
+}
+.got-button {
+  z-index: 2;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #ffffff; /* Dark blue inspired by the show */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+.quote {
+  color: white
+}
+
+.got-button:hover {
+  background-color: #2c3e50; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.got-button:active {
+  transform: scale(0.95);
+}
+/* backgroundsss */
+
+.jaime{
+  background: url('/images/jaime.jpg');
+  background-size:cover;
+  
+}
+.cersei{
+  background: url('/images/cersei.jpg');
+  background-size:cover;
+}
+.baelish{
+  background: url('/images/baelish.jpg');
+  background-size:cover;
+}
+.sansa{
+  background: url('/images/sansa.jpg');
+  background-size:cover;
+}
+.jon{
+  background: url('/images/john.jpg');
+  background-size:cover;
+}
+.samwell{
+  background: url('/images/samwel.jpg');
+  background-size:cover;
+}
+.tyrion{
+  background: url('/images/tyrion.jpg');
+  background-size:cover;
+}
+.arya{
+  background: url('/images/arya.jpg');
+  background-size:cover;
+}
+.ramsay{
+  background: url('/images/ramsay.jpg');
+  background-size:cover;
+}
+.bran{
+  background: url('/images/bran.jpg');
+  background-size:cover;
+}
+.varys{
+  background: url('/images/varys.jpg');
+  background-size:cover;
+}
+.tyrion{
+  background: url('/images/tyrion.jpg');
+  background-size:cover;
+}
+.ned{
+  background: url('/images/ned.jpg');
+  background-size:cover;
+}
+.melisandre{
+  background: url('/images/melisandre.jpg');
+  background-size:cover;
+}
+.tormund{
+  background: url('/images/tormund.jpg');
+  background-size:cover;
+}
+.catelyn{
+  background: url('/images/cat.jpg');
+  background-size:cover;
+}
+.olenna{
+  background: url('/images/olena.jpg');
+  background-size:cover;
+}
+.robert{
+  background: url('/images/robert.jpg');
+  background-size:cover;
+}
+.mance{
+  background: url('/images/mance.jpg');
+  background-size:cover;
+}
+.ygritte{
+  background: url('/images/ygritte.jpg');
+  background-size:cover;
+}
+.daenerys{
+  background: url('/images/dragon.jpg');
+  background-size:cover;
+}
+.aemon{
+  background: url('/images/aemon.jpg');
+  background-size:cover;
+}
+.brienne{
+  background: url('/images/brienne.jpg');
+  background-size:cover;
+}
+.aerys{
+  background: url('/images/aerys.jpg');
+  background-size:cover;
+}
+.joffrey{
+  background: url('/images/joffrey.jpg');
+  background-size:cover;
+}
+.theon{
+  background: url('/images/theon.jpg');
+  background-size:cover;
 }

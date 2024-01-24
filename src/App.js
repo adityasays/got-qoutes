@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [quoteData, setQuote] = useState({
+    quote: '',
+    sayer: '',
+    characterSlug: ''
+  });
+
+  function getQuote() {
+    axios.get('https://api.gameofthronesquotes.xyz/v1/random')
+      .then((response) => {
+        const { sentence, character ,  } = response.data;
+        setQuote({ quote: sentence, sayer: character.name ,characterSlug: character.slug});
+      })
+      .catch((error) => {
+        setQuote({ quote: "Please try again later !!", sayer: "" });
+      });
+  }
+
+  useEffect(() => {
+    getQuote();
+  }, [count]);
+
+  const handleButtonClick = () => {
+    setCount(count + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${quoteData.characterSlug}`}>
+      <div className='cover'></div>
+      <div className='title font'>Game Of Thrones <br/> Quotes</div>
+      <div className='contain'>
+        <div className='quote font'> "{quoteData.quote}"</div>
+        <div className='by font'> {quoteData.sayer} </div>
+      </div>
+      <button className='got-button' onClick={handleButtonClick}>More</button>
     </div>
   );
 }
